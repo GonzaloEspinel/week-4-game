@@ -12,6 +12,13 @@
 	$("#result").html('Your Result: ' + result);
 
 // the clystal and its value
+
+var image = ['assets/images/redGem.png',
+			 'assets/images/blueGem.png',
+			 'assets/images/yellowGem.png',
+			 'assets/images/greenGem.png'
+];
+
 	for(var i = 0; i < 4; i++){
 // value of crystal is gotten
 		var randomNumgem = Math.floor(Math.random() * 11) + 1;
@@ -23,8 +30,10 @@
 			"randomNumber":randomNumgem
 		});
 		 crystal.html(randomNumgem);
+		var SelImg = $("<img>").attr("src", image[i]);
+		SelImg.appendTo(crystal);
 
-		$(".crystals") .append(crystal);
+		$(".crystals").append(crystal);
 	}
 // what does the crystal do and adding it's value?
 		$(".crystal").on('click', function () {
@@ -46,6 +55,8 @@
 		
 
 		});
+
+		
 	
 // 1-. A game with 4 cristals and random result of 90 - 120 
 
